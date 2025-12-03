@@ -15,6 +15,7 @@ public class BucciPichiuBusattiSimulazione {
      */
     public static void main(String[] args) {
         System.out.println("eldego");
+        System.out.println("buso coglione");
     }
     
 }
