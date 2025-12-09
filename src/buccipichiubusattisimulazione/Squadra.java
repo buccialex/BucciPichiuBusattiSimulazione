@@ -12,9 +12,15 @@ public class Squadra {
 
     private Giocatore[] formazioneGiocatori;
     private int forzaTot;
+    private String nome;
+    private int nGol;
 
-    public Squadra() {
+    public Squadra(String nome){
+        this.nome = nome;
+        formazioneGiocatori = new Giocatore[11];
     }
+
+    
 
     public void aggiungiGiocatore(Giocatore giocatore, int i) {
         formazioneGiocatori[i] = giocatore;
@@ -38,8 +44,10 @@ public class Squadra {
         return forzaTot;
     }
 
-    public void setForzaTot(int forzaTot) {
-        this.forzaTot = forzaTot;
+    public void setForzaTot() {
+        for (Giocatore g : formazioneGiocatori){
+            this.forzaTot += g.getForza();
+        }
     }
 
 }

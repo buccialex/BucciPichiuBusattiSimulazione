@@ -14,6 +14,7 @@ import java.util.*;
 public class Partita {
 
     private Squadra[] squadre;
+    
 
     public Partita(Squadra[] squadre) {
         squadre = new Squadra[2];
@@ -42,5 +43,19 @@ public class Partita {
         }
 
     }
+    
+    public void gol(){
+        Random r = new Random();
+        int n = r.nextInt(100);
+        for (Squadra s : squadre){
+            for (Giocatore g : s.getFormazioneGiocatori()){
+                if(n >=20 && n <= 40){
+                    // implementare la scelta del gol alla squadra facendo un confronto in base alla forza totale
+                    
+                }
+            }
+        }
+    }
+        
 
 }

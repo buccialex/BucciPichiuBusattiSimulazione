@@ -8,6 +8,17 @@ package buccipichiubusattisimulazione;
  *
  * @author BUSATTI.MATTIA
  */
-public class Centrocampista {
+public class Centrocampista extends Giocatore{
+
+    public Centrocampista(String nome) {
+        super(nome);
+        forza = 70;
+    }
+
+    
+
+    
+    
+    
     
 }

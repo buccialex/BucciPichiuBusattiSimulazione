@@ -4,6 +4,8 @@
  */
 package buccipichiubusattisimulazione;
 
+import java.util.Objects;
+
 /**
  *
  * @author BUSATTI.MATTIA
@@ -13,8 +15,7 @@ public class Giocatore {
     protected int forza;
     protected String nome;
 
-    public Giocatore(int forza, String nome) {
-        this.forza = forza;
+    public Giocatore(String nome) {
         this.nome = nome;
     }
 
@@ -33,6 +34,33 @@ public class Giocatore {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return "Giocatore{" + "forza=" + forza + ", nome=" + nome + '}';
+    }
+
+    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Giocatore other = (Giocatore) obj;
+        if (this.forza != other.forza) {
+            return false;
+        }
+        return Objects.equals(this.nome, other.nome);
+    }
+    
+    
 
 }
 

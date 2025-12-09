@@ -10,8 +10,9 @@ package buccipichiubusattisimulazione;
  */
 public class Attaccante extends Giocatore{
 
-    public Attaccante(int forza, String nome) {
-        super(forza, nome);
+    public Attaccante(String nome) {
+        super(nome);
+        forza = 85;
     }
     
 }
