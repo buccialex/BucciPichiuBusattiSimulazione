@@ -13,21 +13,21 @@ import java.util.Objects;
 public class Simulazione {
     private Squadra squadraVincitrice;
 
-    
+    public Simulazione(){}
 
     public Squadra getSquadraVincitrice() {
         return squadraVincitrice;
     }
 
-    public void setSquadraVincitrice(Squadra squadraVincitrice) {
-        this.squadraVincitrice = squadraVincitrice;
+    public void setSquadraVincitrice(Squadra[] squadre) {
+        if (squadre[0].getnGol() > squadre[1].getnGol()){
+            squadraVincitrice = squadre[0];
+        } else if (squadre[1].getnGol() > squadre[0].getnGol()){
+            squadraVincitrice = squadre[1];
+        } 
     }
     
-    public void simula(){
-        for(int i = 1; i <= 90; i++){
-            // cose che possono succedere ogni minuto della partita
-        }
-    }
+    
 
     @Override
     public String toString() {

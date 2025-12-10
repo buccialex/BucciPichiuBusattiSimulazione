@@ -3,16 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buccipichiubusattisimulazione;
-
+import java.util.*;
 /**
  *
  * @author BUSATTI.MATTIA
  */
 public class Portiere extends Giocatore{
 
-    public Portiere(String nome) {
-        super(nome);
-        forza = 60;
+    public Portiere() {
+        
+        Random r = new Random();
+        forza = r.nextInt(50, 61);
         
     }
 

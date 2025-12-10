@@ -4,15 +4,18 @@
  */
 package buccipichiubusattisimulazione;
 
+import java.util.Random;
+
 /**
  *
  * @author BUSATTI.MATTIA
  */
 public class Attaccante extends Giocatore{
 
-    public Attaccante(String nome) {
-        super(nome);
-        forza = 85;
+    public Attaccante() {
+       
+        Random r = new Random();
+        forza = r.nextInt(75, 85);
     }
     
 }

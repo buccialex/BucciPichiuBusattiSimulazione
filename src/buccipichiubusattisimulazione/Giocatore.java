@@ -15,8 +15,7 @@ public class Giocatore {
     protected int forza;
     protected String nome;
 
-    public Giocatore(String nome) {
-        this.nome = nome;
+    public Giocatore() {
     }
 
     public int getForza() {

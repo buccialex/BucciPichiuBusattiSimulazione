@@ -16,9 +16,9 @@ public class Partita {
     private Squadra[] squadre;
     
 
-    public Partita(Squadra[] squadre) {
+    public Partita() {
         squadre = new Squadra[2];
-        Random r = new Random();
+        
     }
 
     public Squadra[] getSquadre() {
@@ -46,16 +46,20 @@ public class Partita {
     
     public void gol(){
         Random r = new Random();
-        int n = r.nextInt(100);
-        for (Squadra s : squadre){
-            for (Giocatore g : s.getFormazioneGiocatori()){
-                if(n >=20 && n <= 40){
-                    // implementare la scelta del gol alla squadra facendo un confronto in base alla forza totale
-                    
-                }
-            }
-        }
+        int probSquadA = squadre[0].getForzaTot() / this.sommaFTot() * 100;
+        if (r.nextInt(100) > probSquadA){
+            squadre[1].setGol();
+        } else squadre[0].setGol();
+            
     }
-        
-
+    
+    private int sommaFTot(){
+        int sommaFTot = 0;
+        for (Squadra s : squadre){
+            sommaFTot += s.getForzaTot();
+        }
+        return sommaFTot;
+    }
+    
+    
 }

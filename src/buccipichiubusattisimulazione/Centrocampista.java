@@ -4,15 +4,18 @@
  */
 package buccipichiubusattisimulazione;
 
+import java.util.Random;
+
 /**
  *
  * @author BUSATTI.MATTIA
  */
 public class Centrocampista extends Giocatore{
 
-    public Centrocampista(String nome) {
-        super(nome);
-        forza = 70;
+    public Centrocampista() {
+        
+        Random r = new Random();
+        forza = r.nextInt(65, 75);
     }
 
     

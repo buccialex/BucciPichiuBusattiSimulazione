@@ -4,15 +4,18 @@
  */
 package buccipichiubusattisimulazione;
 
+import java.util.Random;
+
 /**
  *
  * @author BUSATTI.MATTIA
  */
 public class Difensore extends Giocatore {
 
-    public Difensore(String nome) {
-        super(nome);
-        forza = 75;
+    public Difensore() {
+        
+        Random r = new Random();
+        forza = r.nextInt(65, 75);
     }
 
    
