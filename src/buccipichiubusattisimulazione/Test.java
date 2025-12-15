@@ -4,6 +4,7 @@
  */
 package buccipichiubusattisimulazione;
 import java.util.*;
+
 /**
  *
  * @author bucci.alex
@@ -16,9 +17,15 @@ public class Test {
         Squadra s1 = new Squadra(input.nextLine());
         System.out.println("inserire il nome della squadra 2: ");
         Squadra s2 = new Squadra(input.nextLine());
-        for (int i = 1; i <= 11; i++){
-            System.out.println("inserire il nome del giocatore " + i + ": ");
+        Squadra[]  squadre = new Squadra[2];
+        Partita p = new Partita();
+        p.setSquadre(squadre);
+        Simulazione sim = new Simulazione();
+        System.out.println(sim.simula());
+        
+        
+        
             
         }
     }
-}
+

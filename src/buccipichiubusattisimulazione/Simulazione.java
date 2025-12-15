@@ -4,7 +4,7 @@
  */
 package buccipichiubusattisimulazione;
 
-import java.util.Objects;
+import java.util.*;
 
 /**
  *
@@ -27,7 +27,34 @@ public class Simulazione {
         } 
     }
     
-    
+    public String simula(){
+        Random random = new Random();
+        Partita p = new Partita();
+        String mess = "";
+        Giocatore infortunato;
+        Squadra gol;
+        for (int i = 1; i <= 90; i++){
+            infortunato = p.infortunio();
+            if (infortunato != null){
+                mess = "infortunio per il giocatore " + infortunato;
+                return mess;
+            }
+           
+        }
+        
+        for (int i = random.nextInt(20); i < 5;){
+            gol = p.gol();
+            mess = "gol per la squadra " + gol;
+            return mess;
+        }
+        
+        Squadra[] squadre = p.getSquadre();
+        
+        this.setSquadraVincitrice(squadre);
+        
+        return null;
+    }
+        
 
     @Override
     public String toString() {

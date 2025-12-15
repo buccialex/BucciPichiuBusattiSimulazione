@@ -29,27 +29,38 @@ public class Partita {
         this.squadre = squadre;
     }
 
-    public void infortunio() {
+    public Giocatore infortunio() {
         Random r = new Random();
-
+        Partita p = new Partita();
         for (int i = 0; i < 2; i++) {
-            Giocatore[] formazione = squadre[r.nextInt(i)].getFormazioneGiocatori();
+            Giocatore[] formazione = p.getSquadre()[r.nextInt(2)].getFormazioneGiocatori();
             for (Giocatore g : formazione) {
                 if (r.nextInt(5) == 1) {
                     g.setForza(g.getForza() - 20);
+                    squadre[i].setForzaTot();
+                    return g;
+                    
                 }
             }
 
         }
+        return null;
 
     }
     
-    public void gol(){
+    public Squadra gol(){
         Random r = new Random();
         int probSquadA = squadre[0].getForzaTot() / this.sommaFTot() * 100;
         if (r.nextInt(100) > probSquadA){
             squadre[1].setGol();
-        } else squadre[0].setGol();
+            return squadre[1];
+        } else {
+            squadre[0].setGol();
+            return squadre[0];
+        }
+        
+        
+        
             
     }
     

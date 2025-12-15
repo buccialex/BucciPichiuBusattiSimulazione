@@ -34,8 +34,13 @@ public class Squadra {
                   formazioneGiocatori[i] = new Centrocampista();
                   ruoli++;
               }
-              if (ruoli > 6){
-                  formazioneGiocatori[i] = new difensore();
+              
+              if (ruoli > 6 && ruoli < 11){
+                  formazioneGiocatori[i] = new Difensore();
+              }
+              
+              if (ruoli == 11){
+                  formazioneGiocatori[i] = new Portiere();
               }
               
               

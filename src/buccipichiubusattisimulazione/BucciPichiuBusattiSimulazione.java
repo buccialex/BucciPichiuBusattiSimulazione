@@ -14,6 +14,8 @@ public class BucciPichiuBusattiSimulazione {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Test t = new Test();
+         t.esegui();
         
     }
     
