@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class Portiere extends Giocatore{
 
-    public Portiere() {
-        
+    public Portiere(int i) {
+        super(i);
         Random r = new Random();
         forza = r.nextInt(50, 61);
         

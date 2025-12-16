@@ -12,8 +12,8 @@ import java.util.Random;
  */
 public class Centrocampista extends Giocatore{
 
-    public Centrocampista() {
-        
+    public Centrocampista(int i) {
+        super(i);
         Random r = new Random();
         forza = r.nextInt(65, 75);
     }

@@ -27,24 +27,23 @@ public class Simulazione {
         } 
     }
     
-    public String simula(){
+    public String simula(Partita p){
         Random random = new Random();
-        Partita p = new Partita();
         String mess = "";
         Giocatore infortunato;
         Squadra gol;
         for (int i = 1; i <= 90; i++){
             infortunato = p.infortunio();
             if (infortunato != null){
-                mess = "infortunio per il giocatore " + infortunato;
+                mess = "infortunio per il giocatore " + infortunato.getI();
                 return mess;
             }
            
         }
         
-        for (int i = random.nextInt(20); i < 5;){
+        if (random.nextInt(20) < 5){
             gol = p.gol();
-            mess = "gol per la squadra " + gol;
+            mess = "gol per la squadra " + gol.getNome();
             return mess;
         }
         

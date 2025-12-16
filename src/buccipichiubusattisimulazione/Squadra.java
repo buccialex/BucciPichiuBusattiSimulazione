@@ -43,8 +43,10 @@ public class Squadra {
                   formazioneGiocatori[i] = new Portiere();
               }
               
-              
+              formazioneGiocatori[i].setI(i);
         }
+            
+           calcolaForzaTot();
     }
         
     }
@@ -57,6 +59,7 @@ public class Squadra {
     }
 
     private void calcolaForzaTot() {
+        this.forzaTot = 0;
         for (Giocatore giocatore : formazioneGiocatori) {
             forzaTot += giocatore.getForza();
         }
@@ -87,11 +90,21 @@ public class Squadra {
     public void setGol() {
         this.nGol += 1;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
     
 
     @Override
     public String toString() {
-        return "Squadra{" + "formazioneGiocatori=" + formazioneGiocatori + ", forzaTot=" + forzaTot + ", nome=" + nome + ", nGol=" + nGol + '}';
+        return "Squadra{" + "formazioneGiocatori=" + Arrays.toString(formazioneGiocatori) + ", forzaTot=" + forzaTot + ", nome=" + nome + ", nGol=" + nGol + '}';
     }
     
     

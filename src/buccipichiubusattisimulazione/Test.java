@@ -20,8 +20,9 @@ public class Test {
         Squadra[]  squadre = new Squadra[2];
         Partita p = new Partita();
         p.setSquadre(squadre);
+        System.out.println(p.getSquadre());
         Simulazione sim = new Simulazione();
-        System.out.println(sim.simula());
+        System.out.println(sim.simula(p));
         
         
         

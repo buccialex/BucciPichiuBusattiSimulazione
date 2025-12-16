@@ -13,9 +13,10 @@ import java.util.Objects;
 public class Giocatore {
 
     protected int forza;
-    protected String nome;
+    protected int i;
 
-    public Giocatore() {
+    public Giocatore(int i) {
+        this.i = i;
     }
 
     public int getForza() {
@@ -26,17 +27,19 @@ public class Giocatore {
         this.forza = forza;
     }
 
-    public String getNome() {
-        return nome;
+    public int getI() {
+        return i;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setI(int i) {
+        this.i = i;
     }
+
+    
 
     @Override
     public String toString() {
-        return "Giocatore{" + "forza=" + forza + ", nome=" + nome + '}';
+        return "Giocatore{" + "forza=" + forza + ", maglia=" + i + '}';
     }
 
     
@@ -56,8 +59,12 @@ public class Giocatore {
         if (this.forza != other.forza) {
             return false;
         }
-        return Objects.equals(this.nome, other.nome);
+        return this.i == other.i;
     }
+
+    
+
+    
     
     
 

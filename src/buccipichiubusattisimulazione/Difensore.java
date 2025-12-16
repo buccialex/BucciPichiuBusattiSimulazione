@@ -12,8 +12,8 @@ import java.util.Random;
  */
 public class Difensore extends Giocatore {
 
-    public Difensore() {
-        
+    public Difensore(int i) {
+        super(i);
         Random r = new Random();
         forza = r.nextInt(65, 75);
     }

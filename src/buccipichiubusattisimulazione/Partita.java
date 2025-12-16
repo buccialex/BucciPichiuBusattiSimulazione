@@ -29,24 +29,36 @@ public class Partita {
         this.squadre = squadre;
     }
 
-    public Giocatore infortunio() {
-        Random r = new Random();
-        Partita p = new Partita();
-        for (int i = 0; i < 2; i++) {
-            Giocatore[] formazione = p.getSquadre()[r.nextInt(2)].getFormazioneGiocatori();
-            for (Giocatore g : formazione) {
-                if (r.nextInt(5) == 1) {
-                    g.setForza(g.getForza() - 20);
-                    squadre[i].setForzaTot();
-                    return g;
-                    
-                }
+ public Giocatore infortunio() {
+    Random r = new Random();
+    
+    // RIMOSSO: Partita p = new Partita(); -> Non creare una nuova partita!
+    
+    // Ciclo su tutte le squadre presenti nell'array della classe corrente
+    for (int i = 0; i < squadre.length; i++) {
+        
+        // Controllo di sicurezza se una casella dell'array è vuota
+        if (squadre[i] == null) continue; 
+
+        // Prendo la formazione della squadra 'i' (non una a caso con r.nextInt)
+        Giocatore[] formazione = squadre[i].getFormazioneGiocatori();
+        
+        // Controllo sicurezza se la formazione è null
+        if (formazione == null) continue;
+
+        for (Giocatore g : formazione) {
+            if (g != null && r.nextInt(5) == 1) { // Aggiunto check g != null
+                g.setForza(g.getForza() - 20);
+                
+                // Aggiorno la forza totale della squadra corrente
+                squadre[i].setForzaTot(); 
+                
+                return g; // Ritorna il giocatore infortunato ed esce
             }
-
         }
-        return null;
-
     }
+    return null;
+}
     
     public Squadra gol(){
         Random r = new Random();
@@ -70,6 +82,11 @@ public class Partita {
             sommaFTot += s.getForzaTot();
         }
         return sommaFTot;
+    }
+
+    @Override
+    public String toString() {
+        return "Partita{" + "squadre=" + Arrays.toString(squadre) + '}';
     }
     
     
